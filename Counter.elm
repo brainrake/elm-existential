@@ -9,17 +9,17 @@ type Counter a
     = Counter { zero : a, inc : a -> a, val : a -> Int }
 
 
-zero : Counter (Hide a) -> Hide a
+zero : Counter a -> a
 zero (Counter c) =
     c.zero
 
 
-inc : Counter (Hide a) -> (Hide a -> Hide a)
+inc : Counter a -> (a -> a)
 inc (Counter c) =
     c.inc
 
 
-val : Counter (Hide a) -> (Hide a -> Int)
+val : Counter a -> (a -> Int)
 val (Counter c) =
     c.val
 
